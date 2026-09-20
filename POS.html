@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Morning Café</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>☕ Morning Café</h1>
+      <div class="menu">
+        <!-- Coffee -->
+        <div class="item">
+          <h3>Cappuccino</h3>
+          <p>₱120</p>
+          <button onclick="addToCart('Cappuccino', 120)">Add to Cart</button>
+        </div>
+        <div class="item">
+          <h3>Americano</h3>
+          <p>₱100</p>
+          <button onclick="addToCart('Americano', 100)">Add to Cart</button>
+        </div>
+        <div class="item">
+          <h3>Latte</h3>
+          <p>₱130</p>
+          <button onclick="addToCart('Latte', 130)">Add to Cart</button>
+        </div>
+        <div class="item">
+          <h3>Mocha</h3>
+          <p>₱140</p>
+          <button onclick="addToCart('Mocha', 140)">Add to Cart</button>
+        </div>
+        <div class="item">
+          <h3>Espresso</h3>
+          <p>₱90</p>
+          <button onclick="addToCart('Espresso', 90)">Add to Cart</button>
+        </div>
+
+        <!-- Treats -->
+        <div class="item">
+          <h3>Croissant</h3>
+          <p>₱80</p>
+          <button onclick="addToCart('Croissant', 80)">Add to Cart</button>
+        </div>
+        <div class="item">
+          <h3>Cheesecake</h3>
+          <p>₱150</p>
+          <button onclick="addToCart('Cheesecake', 150)">Add to Cart</button>
+        </div>
+        <div class="item">
+          <h3>Chocolate Muffin</h3>
+          <p>₱90</p>
+          <button onclick="addToCart('Chocolate Muffin', 90)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="cart">
+        <h2>🛒 Your Cart</h2>
+        <ul id="cart-list"></ul>
+        <p>
+          <strong>Total: ₱<span id="total">0</span></strong>
+        </p>
+        <button onclick="checkout()">Proceed to Payment</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

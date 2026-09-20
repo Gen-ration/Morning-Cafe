@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morning Café | Login & Register</title>
+    <link rel="stylesheet" href="POStyle.css" />
+  </head>
+  <body>
+    <div id="auth-screen" class="auth-screen">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h2>☕ Morning Café</h2>
+          <p>Login or create your account</p>
+        </div>
+
+        <div class="auth-toggle">
+          <button class="tab-btn active" data-tab="login">Login</button>
+          <button class="tab-btn" data-tab="register">Register</button>
+        </div>
+
+        <form id="login-form" class="auth-form active">
+          <label>
+            Email
+            <input
+              type="email"
+              id="login-email"
+              placeholder="you@example.com"
+              required
+            />
+          </label>
+
+          <label>
+            Password
+            <div class="password-field">
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Enter password"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                data-target="login-password"
+                aria-label="Show password"
+              >
+                Show
+              </button>
+            </div>
+          </label>
+
+          <label class="remember-row">
+            <input type="checkbox" id="remember-me" />
+            <span>Remember me</span>
+          </label>
+
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <form id="register-form" class="auth-form">
+          <label>
+            Full Name
+            <input
+              type="text"
+              id="register-name"
+              placeholder="Your name"
+              required
+            />
+          </label>
+
+          <label>
+            Email
+            <input
+              type="email"
+              id="register-email"
+              placeholder="you@example.com"
+              required
+            />
+          </label>
+
+          <label>
+            Password
+            <div class="password-field">
+              <input
+                type="password"
+                id="register-password"
+                placeholder="Create password"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                data-target="register-password"
+                aria-label="Show password"
+              >
+                Show
+              </button>
+            </div>
+          </label>
+
+          <label>
+            Confirm Password
+            <div class="password-field">
+              <input
+                type="password"
+                id="register-confirm"
+                placeholder="Repeat password"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                data-target="register-confirm"
+                aria-label="Show password"
+              >
+                Show
+              </button>
+            </div>
+          </label>
+
+          <label>
+            Sign up with
+            <select id="register-provider">
+              <option value="Gmail">Gmail</option>
+              <option value="Facebook">Facebook</option>
+              <option value="TikTok">TikTok</option>
+            </select>
+          </label>
+
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+
+        <div class="socials">
+          <button class="social-btn" data-provider="Gmail" title="Gmail">
+            <img src="google.jpg" alt="Gmail" />
+          </button>
+          <button class="social-btn" data-provider="Facebook" title="Facebook">
+            <img src="facebook.jpg" alt="Facebook" />
+          </button>
+          <button class="social-btn" data-provider="TikTok" title="TikTok">
+            <img src="tiktok.jpg" alt="TikTok" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="app-screen" class="app-screen hidden">
+      <header class="topbar">
+        <div class="brand">☕ Morning Café</div>
+
+        <div class="user-menu-wrap">
+          <button
+            id="user-menu-button"
+            class="user-menu-button"
+            aria-expanded="false"
+          >
+            Menu ▾
+          </button>
+          <div id="user-menu" class="user-menu hidden">
+            <button id="check-account-btn" class="menu-action-btn">
+              Check Account
+            </button>
+            <button id="history-btn" class="menu-action-btn">History</button>
+            <button id="logout-btn" class="menu-action-btn">Log Out</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <h1>☕ Morning Café</h1>
+
+        <h2 class="section-title">☕ Coffee</h2>
+        <div class="menu">
+          <div class="item">
+            <img src="cuppacino.jpe" alt="Cappuccino" class="item-img" />
+            <h3>Cappuccino</h3>
+            <p>₱120</p>
+            <button onclick="addToCart('Cappuccino', 120)">Add to Cart</button>
+          </div>
+          <div class="item">
+            <img src="americano.jpe" alt="Americano" class="item-img" />
+            <h3>Americano</h3>
+            <p>₱100</p>
+            <button onclick="addToCart('Americano', 100)">Add to Cart</button>
+          </div>
+          <div class="item">
+            <img src="latte.jpg" alt="Latte" class="item-img" />
+            <h3>Latte</h3>
+            <p>₱130</p>
+            <button onclick="addToCart('Latte', 130)">Add to Cart</button>
+          </div>
+          <div class="item">
+            <img src="mocha.jpe" alt="Mocha" class="item-img" />
+            <h3>Mocha</h3>
+            <p>₱140</p>
+            <button onclick="addToCart('Mocha', 140)">Add to Cart</button>
+          </div>
+          <div class="item">
+            <img src="espresso.jpe" alt="Espresso" class="item-img" />
+            <h3>Espresso</h3>
+            <p>₱90</p>
+            <button onclick="addToCart('Espresso', 90)">Add to Cart</button>
+          </div>
+          <div class="item">
+            <img src="machiato.jpe" alt="Macchiato" class="item-img" />
+            <h3>Macchiato</h3>
+            <p>₱110</p>
+            <button onclick="addToCart('Macchiato', 110)">Add to Cart</button>
+          </div>
+        </div>
+
+        <h2 class="section-title">🍰 Snacks</h2>
+        <div class="menu">
+          <div class="item">
+            <img src="crossaint.jpe" alt="Croissant" class="item-img" />
+            <h3>Croissant</h3>
+            <p>₱80</p>
+            <button onclick="addToCart('Croissant', 80)">Add to Cart</button>
+          </div>
+          <div class="item">
+            <img src="cheesecake.jpe" alt="Cheesecake" class="item-img" />
+            <h3>Cheesecake</h3>
+            <p>₱150</p>
+            <button onclick="addToCart('Cheesecake', 150)">Add to Cart</button>
+          </div>
+          <div class="item">
+            <img src="muffin.jpe" alt="Chocolate Muffin" class="item-img" />
+            <h3>Chocolate Muffin</h3>
+            <p>₱90</p>
+            <button onclick="addToCart('Chocolate Muffin', 90)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="cart">
+          <div class="drag-handle cart-handle" aria-label="Drag cart">
+            <span class="drag-bar"></span>
+          </div>
+          <h2>🛒 Your Cart</h2>
+          <ul id="cart-list"></ul>
+          <p>
+            <strong>Total: ₱<span id="total">0</span></strong>
+          </p>
+          <button onclick="checkout()">Proceed to Payment</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="account-modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-account-modal" class="close-btn">×</span>
+        <h3>My Account</h3>
+        <div id="account-details" class="account-details"></div>
+        <div id="account-summary" class="account-summary"></div>
+        <div id="saved-accounts" class="saved-accounts"></div>
+      </div>
+    </div>
+
+    <div id="history-modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-history-modal" class="close-btn">×</span>
+        <h3>Payment History</h3>
+        <div id="history-content" class="payment-history"></div>
+      </div>
+    </div>
+
+    <div id="payment-success-modal" class="modal hidden">
+      <div class="payment-success-content">
+        <div class="success-icon">✓</div>
+        <h3>Payment Successful</h3>
+        <p>Your order has been placed and is being prepared.</p>
+        <div class="success-total">
+          <span>Total</span>
+          <strong id="success-total">₱0.00</strong>
+        </div>
+        <button id="success-done-btn" class="success-btn">Done</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
